@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Obj2Ifc": {
+      "commandName": "Project",
+      "commandLineArgs": "-f -o \"C:\\Data\\Dev\\XbimPrivate\\IdanSoft\\2022 04 - Review data\\OBJ2.obj\" -g FacetedBrep "
+    }
+  }
+}
