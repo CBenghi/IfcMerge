@@ -1,10 +1,8 @@
 ﻿using CommandLine;
-using FileFormatWavefront;
-using FileFormatWavefront.Model;
+using IfcMerge;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using static Obj2Ifc.Obj2IfcBuilder;
 
 namespace Obj2Ifc
 {
@@ -15,14 +13,11 @@ namespace Obj2Ifc
             var t = Parser.Default.ParseArguments<Options>(args)
                 .WithParsed(Run)
                 .WithNotParsed(HandleParseError);
-            switch(t.Tag)
+            return t.Tag switch
             {
-                case ParserResultType.Parsed:
-                    return 0;
-                case ParserResultType.NotParsed:
-                default:
-                    return 1;
-            }
+                ParserResultType.Parsed => 0,
+                _ => 1,
+            };
         }
 
         static void Run(Options opts)
@@ -31,41 +26,25 @@ namespace Obj2Ifc
             if (!valid)
                 return;
 
-            var builder = new Obj2IfcBuilder();
-            foreach (var objfile in opts.ObjFiles)
+            var builder = new IfcMerger();
+            foreach (var inFile in opts.InputFiles)
             {
-                if (File.Exists(objfile))
+                if (File.Exists(inFile))
                 {
-                    FileInfo f = new FileInfo(objfile);
-                    Console.WriteLine($"Opening Obj File: ${objfile}");
-                    var objFile = OpenObJFile(objfile, opts.LoadTextures);
-
-                    Source s = new Source(objFile.Model, f);
-                    builder.AddObjScene(s);
+                    var f = new FileInfo(inFile);
+                    Console.WriteLine($"Opening ifc File: ${inFile}");
+                    builder.MergeFile(f);
                     
                 }
                 else
                 {
-                    Console.Error.WriteLine($"Failed to open file {objfile}");
+                    Console.Error.WriteLine($"Failed to open file {inFile}");
                 }
             }
-            Console.WriteLine($"{builder.SceneCount} obj files added. Creating IFC...");
-            var file = builder.CreateIfcModel(opts);
+            Console.WriteLine($"{builder.processed} files merged. Creating IFC...");
+            var file = builder.SaveIfcModel(opts);
             Console.WriteLine($"Created IFC File {file}");
 
-        }
-
-        private static FileLoadResult<Scene> OpenObJFile(string objFile, bool loadTextures)
-        {
-            if(File.Exists(objFile))
-            {
-                return FileFormatObj.Load(objFile, loadTextures);
-            }
-            else
-            {
-                Console.Error.WriteLine($"Failed to load ${objFile}");
-                throw new FileNotFoundException(objFile);
-            }
         }
 
         static void HandleParseError(IEnumerable<Error> errs)
