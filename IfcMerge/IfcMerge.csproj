@@ -16,4 +16,16 @@
     <PackageReference Include="Xbim.Essentials" Version="5.1.341" />
   </ItemGroup>
 
+	<!-- 
+	the following two targets tag the "product version" with version and commit hash 
+	such information is visible in the dll proprty information dialog.
+	-->
+	<Target Name="InitializeSourceControlInformation" />
+	<Target Name="SetSourceRevisionId" BeforeTargets="InitializeSourceControlInformation">
+		<Exec Command="git describe --long --always --dirty --exclude=* --abbrev=8" ConsoleToMSBuild="True" IgnoreExitCode="False">
+			<Output PropertyName="SourceRevisionId" TaskParameter="ConsoleOutput" />
+		</Exec>
+	</Target>
+	<!-- end git product version -->
+	
 </Project>
