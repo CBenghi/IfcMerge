@@ -1,10 +1,5 @@
-using CommandLine;
 using FluentAssertions;
-using Obj2Ifc;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
+using IfcMerge;
 using Xunit;
 
 namespace IfcMergeTests
@@ -17,6 +12,6 @@ namespace IfcMergeTests
             var s = Program.Main(new[] { "" });
             s.Should().NotBe(0); // no arguments return an errorlevel
         }
-      
+
     }
 }

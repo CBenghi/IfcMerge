@@ -1,10 +1,9 @@
 ﻿using CommandLine;
-using IfcMerge;
 using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace Obj2Ifc
+namespace IfcMerge
 {
     public class Program
     {
@@ -34,7 +33,7 @@ namespace Obj2Ifc
                     var f = new FileInfo(inFile);
                     Console.WriteLine($"Opening ifc File: ${inFile}");
                     builder.MergeFile(f);
-                    
+
                 }
                 else
                 {
@@ -52,7 +51,7 @@ namespace Obj2Ifc
             //handle errors etc
             foreach (var err in errs)
             {
-      
+
                 switch (err)
                 {
                     case VersionRequestedError _:
@@ -67,7 +66,7 @@ namespace Obj2Ifc
                         Console.WriteLine($"Missing value for input: --{missing.NameInfo.LongName}");
                         break;
 
-                    
+
                     default:
                         Console.Error.WriteLine(err);
 

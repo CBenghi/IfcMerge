@@ -1,9 +1,8 @@
 ﻿using CommandLine;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
-namespace Obj2Ifc
+namespace IfcMerge
 {
     public partial class Options
     {
@@ -11,7 +10,7 @@ namespace Obj2Ifc
         public IEnumerable<string> InputFiles { get; set; } = Enumerable.Empty<string>();
 
         [Option('o', "OutputFile", HelpText = "The IFC File to output, the extension chosen determines the format (e.g. ifczip).")]
-        public string OutputFile { get; set; } = "";              
+        public string OutputFile { get; set; } = "";
     }
 
 }

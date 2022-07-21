@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
-namespace Obj2Ifc
+namespace IfcMerge
 {
     public static class OptionsValidation
     {
         public static bool Validate(this Options options)
         {
-            if (options == null)    
+            if (options == null)
                 return false;
             if (!options.InputFiles.Any())
                 return false;
