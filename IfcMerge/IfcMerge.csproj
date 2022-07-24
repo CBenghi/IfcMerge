@@ -8,6 +8,16 @@
 		<FileVersion>$(AssemblyVersion)</FileVersion>
 		<ProductVersion>$(AssemblyVersion)</ProductVersion>
 		<Version>$(AssemblyVersion)</Version>
+		<Authors>Claudio Benghi</Authors>
+		<Company>Xbim.it</Company>
+		<Description>A simple command line application for merging IfcElements of multiple ifc files into one.</Description>
+		<Copyright>Claudio Benghi</Copyright>
+		<PackageProjectUrl>https://github.com/CBenghi/IfcMerge/</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/CBenghi/IfcMerge/</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>IFC; OpenBIM; Merge</PackageTags>
+		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+		<EnableNETAnalyzers>True</EnableNETAnalyzers>
 	</PropertyGroup>
 
 	<ItemGroup>

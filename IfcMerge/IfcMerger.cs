@@ -121,8 +121,7 @@ namespace IfcMerge
         {
             if (destModel is null)
                 return;
-            if (sharedProject is null)
-                sharedProject = GetShared<IIfcProject>();
+            sharedProject ??= GetShared<IIfcProject>();
 
             // context of the project are retained
             foreach (var context in destModel.Instances.OfType<IIfcRepresentationContext>())

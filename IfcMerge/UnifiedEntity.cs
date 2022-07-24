@@ -39,7 +39,7 @@ namespace IfcMerge
             }
         }
 
-        private string Serialize(IIfcAxis2Placement coordinateSystem)
+        private static string Serialize(IIfcAxis2Placement coordinateSystem)
         {
             if (coordinateSystem is IIfcAxis2Placement2D case2D)
             {
