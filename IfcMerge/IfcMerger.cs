@@ -72,6 +72,7 @@ namespace IfcMerge
                 txn.Commit();
                 GetAllShared();
             };
+            processed++;
 		}
 
         private void SetAllShared(IfcStore model)

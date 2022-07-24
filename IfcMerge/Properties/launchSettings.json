@@ -1,8 +1,12 @@
 {
   "profiles": {
-    "Merge three": {
+    "Merge set 1": {
       "commandName": "Project",
-      "commandLineArgs": "-i \"..\\..\\..\\..\\IfcMergeTests\\data\\1.ifc\" \"..\\..\\..\\..\\IfcMergeTests\\data\\2.ifc\" \"..\\..\\..\\..\\IfcMergeTests\\data\\3.ifc\" -o \"123.ifc\""
+      "commandLineArgs": "-i \"..\\..\\..\\..\\IfcMergeTests\\data\\Set1\\1.ifc\" \"..\\..\\..\\..\\IfcMergeTests\\data\\Set1\\2.ifc\" \"..\\..\\..\\..\\IfcMergeTests\\data\\Set1\\3.ifc\" -o \"Set1.ifc\""
+    },
+	"Merge set 2": {
+      "commandName": "Project",
+      "commandLineArgs": "-i \"..\\..\\..\\..\\IfcMergeTests\\data\\Set2\\1.ifc\" \"..\\..\\..\\..\\IfcMergeTests\\data\\Set2\\2.ifc\" \"..\\..\\..\\..\\IfcMergeTests\\data\\Set2\\3.ifc\" -o \"Set2.ifc\""
     }
   }
 }
