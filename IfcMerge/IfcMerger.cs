@@ -90,10 +90,10 @@ namespace IfcMerge
             }
 
             // owner
-            if (opts.MergeOwner)
+            if (!opts.RetainOwner)
                 SetShared<IIfcOwnerHistory>(model, sharedOwner);
             // spatial
-            if (opts.MergeSpatial)
+            if (!opts.RetainSpatial)
             {
                 foreach (var namedSpace in model.Instances.OfType<IIfcSpatialElement>())
                 {
@@ -106,6 +106,8 @@ namespace IfcMerge
 
         private void SetShared<T>(IfcStore model, XbimInstanceHandle? sharedHandle) where T : IPersistEntity
         {
+            if (map is null)
+                return;
             if (sharedHandle is not null)
             {
                 foreach (var prj in model.Instances.OfType<T>())
@@ -131,10 +133,10 @@ namespace IfcMerge
             }
 
             // owner history
-            if (opts.MergeOwner && sharedOwner is null)
+            if (!opts.RetainOwner && sharedOwner is null)
                 sharedOwner = GetShared<IIfcOwnerHistory>();
             // spatial
-            if (opts.MergeSpatial)
+            if (!opts.RetainSpatial)
             {
                 foreach (var namedSpace in destModel.Instances.OfType<IIfcSpatialElement>())
                 {

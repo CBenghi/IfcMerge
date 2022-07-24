@@ -42,7 +42,6 @@ namespace IfcMerge
             Console.WriteLine($"{builder.processed} files merged. Creating IFC...");
             var file = builder.SaveIfcModel();
             Console.WriteLine($"Created IFC File {file.FullName}");
-
         }
 
         static void HandleParseError(IEnumerable<Error> errs)
