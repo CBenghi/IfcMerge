@@ -12,10 +12,10 @@ namespace IfcMerge
         [Option('o', "OutputFile", Required = true, HelpText = "The IFC File to output, the extension chosen determines the format (e.g. ifczip).")]
         public string OutputFile { get; set; } = "";
 
-        [Option("RetainOwner", HelpText = "If set true retains original OwnerHistory, where possible.")]
+        [Option("RetainOwner", HelpText = "retains OwnerHistory ifnormation from the original file, where possible.")]
         public bool RetainOwner { get; set; } = false;
 
-        [Option("RetainSpatial", HelpText = "If set true retains space hierarchy objects even if they share the same name.")]
+        [Option("RetainSpatial", HelpText = "retains space hierarchy objects from the original files, even if they share the same name of others in the merged set.")]
         public bool RetainSpatial { get; set; } = false;
 
     }
