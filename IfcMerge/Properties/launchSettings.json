@@ -1,8 +1,8 @@
 {
   "profiles": {
-    "ifcMerge": {
+    "Merge three": {
       "commandName": "Project",
-      "commandLineArgs": "-f -o \"C:\\Data\\Dev\\XbimPrivate\\IdanSoft\\2022 04 - Review data\\OBJ2.obj\" -g FacetedBrep "
+      "commandLineArgs": "-i \"..\\..\\..\\..\\IfcMergeTests\\data\\1.ifc\" \"..\\..\\..\\..\\IfcMergeTests\\data\\2.ifc\" \"..\\..\\..\\..\\IfcMergeTests\\data\\3.ifc\" -o \"123.ifc\""
     }
   }
 }

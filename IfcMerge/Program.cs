@@ -25,7 +25,7 @@ namespace IfcMerge
             if (!valid)
                 return;
 
-            var builder = new IfcMerger();
+            var builder = new IfcMerger(opts);
             foreach (var inFile in opts.InputFiles)
             {
                 if (File.Exists(inFile))
@@ -33,7 +33,6 @@ namespace IfcMerge
                     var f = new FileInfo(inFile);
                     Console.WriteLine($"Opening ifc File: ${inFile}");
                     builder.MergeFile(f);
-
                 }
                 else
                 {
@@ -41,7 +40,7 @@ namespace IfcMerge
                 }
             }
             Console.WriteLine($"{builder.processed} files merged. Creating IFC...");
-            var file = builder.SaveIfcModel(opts);
+            var file = builder.SaveIfcModel();
             Console.WriteLine($"Created IFC File {file}");
 
         }
