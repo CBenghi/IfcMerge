@@ -7,6 +7,10 @@
 	"Merge set 2": {
       "commandName": "Project",
       "commandLineArgs": "-i \"..\\..\\..\\..\\IfcMergeTests\\data\\Set2\\1.ifc\" \"..\\..\\..\\..\\IfcMergeTests\\data\\Set2\\2.ifc\" \"..\\..\\..\\..\\IfcMergeTests\\data\\Set2\\3.ifc\" -o \"Set2.ifc\""
+    },
+	"Merge set 3": {
+      "commandName": "Project",
+      "commandLineArgs": "-i \"..\\..\\..\\..\\IfcMergeTests\\data\\Set3\\1.ifc\" \"..\\..\\..\\..\\IfcMergeTests\\data\\Set3\\2.ifc\" \"..\\..\\..\\..\\IfcMergeTests\\data\\Set3\\3.ifc\" \"..\\..\\..\\..\\IfcMergeTests\\data\\Set3\\4.ifc\" -o \"Set3.ifc\""
     }
   }
 }
