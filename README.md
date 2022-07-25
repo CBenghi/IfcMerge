@@ -30,6 +30,12 @@ The following command options are available:
 This tool is quite simple and assumes (withouut checking) that the project shares the same units. 
 In case models don't share the same units the resulting file would present incorrect data.
 
+## History
+
+- v1.2 - Added feature to read files to merge from a file with `txt` extension.
+- v1.1 - Initial public release
+
+
 ## Todo
 
 - [ ] Managed project of different units
