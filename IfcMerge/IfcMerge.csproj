@@ -4,7 +4,7 @@
 		<TargetFramework>net48</TargetFramework>
 		<Nullable>enable</Nullable>
 		<LangVersion>9.0</LangVersion>
-		<AssemblyVersion>1.1.0</AssemblyVersion>
+		<AssemblyVersion>1.2.0</AssemblyVersion>
 		<FileVersion>$(AssemblyVersion)</FileVersion>
 		<ProductVersion>$(AssemblyVersion)</ProductVersion>
 		<Version>$(AssemblyVersion)</Version>

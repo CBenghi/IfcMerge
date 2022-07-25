@@ -1,0 +1,4 @@
+C:\Data\Dev\XbimPrivate\IdanSoft\2022 07 - IfcMerge\IfcMergeTests\data\Set3\1.ifc
+C:\Data\Dev\XbimPrivate\IdanSoft\2022 07 - IfcMerge\IfcMergeTests\data\Set3\2.ifc
+C:\Data\Dev\XbimPrivate\IdanSoft\2022 07 - IfcMerge\IfcMergeTests\data\Set3\3.ifc
+C:\Data\Dev\XbimPrivate\IdanSoft\2022 07 - IfcMerge\IfcMergeTests\data\Set3\4.ifc

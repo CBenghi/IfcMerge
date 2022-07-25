@@ -31,8 +31,25 @@ namespace IfcMerge
                 if (File.Exists(inFile))
                 {
                     var f = new FileInfo(inFile);
-                    Console.WriteLine($"Opening ifc File: ${inFile}");
-                    builder.MergeFile(f);
+
+                    if (f.Extension.ToLowerInvariant() == ".txt")
+                    {
+                        Console.WriteLine($"Opening list File: ${inFile}");
+                        var allLines = File.ReadAllLines(inFile);
+                        foreach (var line in allLines)
+                        {
+                            if (string.IsNullOrEmpty(line))
+                                continue;
+                            Console.WriteLine($"- Opening ifc File: ${line}");
+                            var fi = new FileInfo(line);
+                            builder.MergeFile(fi);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Opening ifc File: ${inFile}");
+                        builder.MergeFile(f);
+                    }
                 }
                 else
                 {
