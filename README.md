@@ -7,7 +7,9 @@ A simple command line application for merging IfcElements of multiple ifc files 
 The following command options are available:
 
 ```
-  -i, --InputFile     Required. Any number of valid IFC models or a file containing their names.
+  -i, --InputFile     Required. Any number of valid IFC models or a file containing their names. If
+                      the inputfile has txt extension each line will be parsed as a single source
+                      file to merge.
 
   -o, --OutputFile    Required. The IFC File to output, the extension chosen determines the format
                       (e.g. ifczip).
