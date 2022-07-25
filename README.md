@@ -23,6 +23,16 @@ The following command options are available:
   
 ```
 
+## Warning
+
+This tool is quite simple and assumes (withouut checking) that the project shares the same units. 
+In case models don't share the same units the resulting file would present incorrect data.
+
+## Todo
+
+- [ ] Managed project of different units
+- [ ] Improve the management of geometric contexts; currently some contexts might not be correctly listed in the project.
+
 ## Contributing
 
 PRs are welcome.
