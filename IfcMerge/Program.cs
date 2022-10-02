@@ -19,8 +19,20 @@ namespace IfcMerge
             };
         }
 
+        static string AsmblyVer
+        {
+            get
+            {
+                System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+                System.Diagnostics.FileVersionInfo fvi = System.Diagnostics.FileVersionInfo.GetVersionInfo(assembly.Location);
+                string version = fvi.FileVersion;
+                return version;
+            }
+        }
+
         static void Run(Options opts)
         {
+            Console.WriteLine($"IfcMerge version {AsmblyVer}");
             var valid = opts.Validate();
             if (!valid)
                 return;

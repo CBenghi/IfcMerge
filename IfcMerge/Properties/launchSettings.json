@@ -15,8 +15,10 @@
     "Merge set 3 from text source": {
       "commandName": "Project",
       "commandLineArgs": "-i \"..\\..\\..\\..\\IfcMergeTests\\data\\Set3\\sources.txt\" -o \"Set3-sources.ifc\""
+    },
+    "ReportedCrash": {
+      "commandName": "Project",
+      "commandLineArgs": "-i \"C:\\Data\\Ifc\\_NDA\\2022 10 02 - Idan\\list_ifc.txt\" -o \"C:\\Data\\Ifc\\_NDA\\2022 10 02 - Idan\\merge1.ifc\""
     }
-
-
   }
 }
